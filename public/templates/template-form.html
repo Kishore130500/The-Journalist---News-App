@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TJ</title>
-    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/form.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,32 +15,27 @@
 </head>
 
 <body>
-    <div id="form-body">
+    <!--Navbar-->
+    <nav id="navbar">
+        <em><span>T</span>he &nbsp;<span>J</span>ournalist</em>
+    </nav>
 
-        <!--Navbar-->
-        <nav id="navbar">
-            <em><span>T</span>he &nbsp;<span>J</span>ournalist</em>
-        </nav>
-
-        <!--Form-->
-        <div class="form-holder">
-            <form>
-                <div class="container">
-                    <label for="author">Author</label>
-                    <input type="text" name="author" class="input-fields" id="author-input">
-                    <label for="date" id="date-label">Date</label>
-                    <input type="date"name="date" class="input-fields" id="date-input">
-                </div>
-                <label class="clearfix" for="heading">Heading</label> <br>
-                <textarea name="title" class="input-fields" id=""></textarea><br>
-                <label for="content">Article</label><br><br>
-                <textarea name="description" class="input-fields" id="content-box"></textarea><br>
-                <button type="submit" id="form-submit">Submit</button>
-            </form>
-        </div>
-
+    <!--Form-->
+    <div class="form-holder">
+        <form>
+            <div class="container">
+                <label for="author">Author</label>
+                <input type="text" name="author" class="input-fields" id="author-input">
+                <label for="date" id="date-label">Date</label>
+                <input type="date" name="date" class="input-fields" id="date-input">
+            </div>
+            <label class="clearfix" for="heading">Heading</label> <br>
+            <textarea name="title" class="input-fields" id=""></textarea><br>
+            <label for="content">Article</label><br><br>
+            <textarea name="description" class="input-fields" id="content-box"></textarea><br>
+            <button type="submit" id="form-submit">Submit</button>
+        </form>
     </div>
-
 
     <script src="../script/form.js"></script>
 </body>

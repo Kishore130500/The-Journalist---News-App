@@ -40,24 +40,28 @@ const tempCard = fs.readFileSync('./public/templates/template-news-card.html', '
 
 app.use(express.static('public'));
 
+
 app.get('/', (req, res) => {
     res.status(200).send(tempHome);
 });
+
 
 app.get('/read', (req, res) => {
     res.status(200).send(tempRead)
 })
 
-app.get('/create', (req, res) => {
+/*
+app.get('/news/form', (req, res) => {
     res.status(200).send(tempForm);
 })
+*/
 
 app.post('/api/v1/news', (req,res) => {
     const newNewsToAdd = new News(req.body);
     newNewsToAdd.save()
         .then(doc => console.log(doc))
         .catch(err => console.log(" 💥 Error adding data:",err));
-    res.status(200).send(" Data Recieved on Server")
+    res.status(200).send(" Data Recieved at Server")
 })
 
 const port = process.env.PORT || 8000;

@@ -1,54 +1,17 @@
-*{
-    box-sizing: border-box;
-}
-
 body{
-    margin: 0px;
-    height: 100vh;
-    background: #FAF9F6;
-}
-
-h1,h2,h3,h4{
-    margin: 0px;
+    background-color: #FAF9F6;
 }
 
 #navbar{
-    background-color: #001233;/* #1b2da0;*/
-    color: #CAC0B3;/*white*/
-    font-size: larger;
-    padding: 25px 20px 25px;
-    border-bottom: solid 2.5px #f14153;
     margin-bottom: 3rem;
-    position: relative;
 }
-    #navbar >em{
-        font-family: 'Cinzel', serif;
-        font-style: normal;
-        font-size: 2rem;
-    }
-        #navbar >em span{
-            color: #FF595A;
-        }
-
-.buttons{
-    width:100px;
-    height: 3em;
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-    background-color: transparent;
-    border: solid  2px #FAF9F6;
-    border-radius: 5px;
-}
-    .buttons:hover{
-        background-color: rgb(71, 203, 137);
-    }
 
 .add-button{
     position: absolute;
     right:20vw;
     top:2em;
 }
+
 
 #news-board{
     /*background-color:rgb(163, 141, 41);*/

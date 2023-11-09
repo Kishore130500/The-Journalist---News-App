@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TJ</title>
-    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/index.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
@@ -15,11 +16,13 @@
 <body>
     <nav id="navbar">
         <em><span>T</span>he &nbsp;<span>J</span>ournalist</em>
-        <a href="/create"><button class="buttons add-button">Create</button></a>
+        <a id="create-btn" href="/#/news/form"><button class="buttons add-button">Create</button></a>
     </nav>
     <div id="news-board">
             {%NEWS_CARDS%}
     </div>
+
+    <script src="../script/index.js"></script>
 </body>
 
 </html> 
