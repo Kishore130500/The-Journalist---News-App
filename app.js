@@ -46,19 +46,35 @@ app.get('/', (req, res) => {
 
 app.get('/read', (req, res) => {
     res.status(200).send(tempRead)
-})
+});
 
 app.get('/create', (req, res) => {
     res.status(200).send(tempForm);
-})
+});
 
-app.post('/api/v1/news', (req,res) => {
+app.get('/api/v1/news', async (req, res) => {
+    try {
+        const news = await News.find();
+        res.status(200).json({
+            status: "success",
+            result: news.length,
+            data: news
+        })
+    } catch(err){
+        res.status(404).json({
+            status: "Fail",
+            message: err
+        })
+    }
+});
+
+app.post('/api/v1/news', (req, res) => {
     const newNewsToAdd = new News(req.body);
     newNewsToAdd.save()
         .then(doc => console.log(doc))
-        .catch(err => console.log(" 💥 Error adding data:",err));
+        .catch(err => console.log(" 💥 Error adding data:", err));
     res.status(200).send(" Data Recieved on Server")
-})
+});
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
