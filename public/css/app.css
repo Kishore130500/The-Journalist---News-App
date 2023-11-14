@@ -13,8 +13,8 @@ h1,h2,h3,h4{
 }
 
 #navbar{
-    background-color: #001233;/* #1b2da0;*/
-    color: #CAC0B3;/*white*/
+    background-color: #001233;
+    color: #CAC0B3;
     font-size: larger;
     padding: 25px 20px 25px;
     border-bottom: solid 2.5px #f14153;
@@ -26,7 +26,12 @@ h1,h2,h3,h4{
         font-style: normal;
         font-size: 2rem;
     }
-        #navbar >em span{
+        #navbar >em >a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        #navbar >em >a span{
             color: #FF595A;
         }
 
@@ -51,7 +56,6 @@ h1,h2,h3,h4{
 }
 
 #news-board{
-    /*background-color:rgb(163, 141, 41);*/
     width:96vw;
     margin-left: 2vw;
     min-height: 100px; /*remove later*/

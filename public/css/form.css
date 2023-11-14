@@ -1,4 +1,4 @@
-#form-body{
+#bg-img{
     background-color: #d4a172 !important;
     background: url('../src/background.jpg');
     background-size: 100% 100vh;
@@ -6,11 +6,15 @@
     object-fit: contain;
 }
 
-#form-body >#navbar{
+#bg-img >#navbar{
     margin-bottom: 0.5rem;
 }
 
-.form-holder{
+#load-form-button{
+    display: none;
+}
+
+#news-board{
     background-color: rgb(238, 150, 150);
     background: transparent;
     min-height: 100px;
@@ -18,7 +22,7 @@
     margin:auto;
     padding: 2em;
 }
-.form-holder label{
+#news-board label{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.3em;
 }
@@ -59,20 +63,20 @@
     top:2em;
 }
 
-.form-holder textarea{
+#news-board textarea{
     width:50%;
     border: 2px solid black;
     position: relative;
     bottom:1em;
 }
-.form-holder textarea,input{   
+#news-board textarea,input{   
     padding: 2px;
     border: 2px solid black;
     border-radius: 10px;
     background-color: beige;
 }
 
-.form-holder button{   
+#news-board button{   
     margin: 10px 0px 0px 20%;
     width: 100px;
     padding: 10px;
@@ -84,7 +88,7 @@
     font-size: 110%;
 }
 
-.form-holder button:hover{
+#news-board button:hover{
     background-color: rgb(119, 236, 106);
     color:blue;
     border-color: white;

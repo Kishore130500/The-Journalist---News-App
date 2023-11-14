@@ -14,7 +14,7 @@ const handleInputChange = (event) => {
     formData[event.target.name] = event.target.value;
 };
 
-const inputs = document.querySelector('.form-holder');
+const inputs = document.querySelector('#news-board');
 inputs.addEventListener('change', handleInputChange);
 
 //Submitting data
@@ -29,12 +29,16 @@ const handleSubmit = (event) => {
         },
         body: JSON.stringify(formData)
     }
-    fetch('api/v1/news', options)
+
+    // "/" in beginning of the end point ensures that the request is made to the absolute path, from the root of the domain. 
+    fetch('/api/v1/news', options)
         .then(response => {
-            alert("✅ Successfully posted article")
-            console.log(response.body)
+            alert("✅ Successfully posted article");
+            console.log(response.body);
+            const inputFields = document.querySelectorAll(".input-fields");
+            [...inputFields].forEach(element => element.value = "");
         })
-        .catch(err => console.log(" 💥 Error sending data"));
+        .catch(err => console.log(" 💥 Error : \n",err));
 };
 
 const submitData = document.querySelector('#form-submit');
