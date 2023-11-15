@@ -1,0 +1,3 @@
+<h1 align="center" id="title">The Journalist - News App</h1>
+
+<p id="description">This is a simple web app performing CRUD operations on the database. The app hosts news or articles from various authors and aggregates it on the home page. The web app uses mongoDB for database Node and Express on server-side and vanilla js and mongoose library on the front-end. The entire app is rendered on the client-side.</p>

@@ -29,11 +29,11 @@
 }
 
 #subscript-container em {
-    border-bottom: solid 2px red;
+    font-weight: 700;
 }
 
 #subscript-container >em span{
-color: rgb(9, 125, 82);
+color: rgb(225, 95, 95);
 }
 
 #content {

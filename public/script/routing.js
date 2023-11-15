@@ -47,14 +47,14 @@ const loadFormPage = () => {
         <form>
             <div class="container">
                 <label for="author">Author</label>
-                <input type="text" name="author" class="input-fields" id="author-input">
+                <input type="text" name="author" class="input-fields" id="author-input" required>
                 <label for="date" id="date-label">Date</label>
-                <input type="date"name="date" class="input-fields" id="date-input">
+                <input type="date"name="date" class="input-fields" id="date-input" required>
             </div>
             <label class="clearfix" for="heading">Heading</label> <br>
-            <textarea name="title" class="input-fields" id=""></textarea><br>
+            <textarea name="title" class="input-fields" id="" required></textarea><br>
             <label for="content">Article</label><br> <br>
-            <textarea name="description" class="input-fields" id="content-box"></textarea><br>
+            <textarea name="description" class="input-fields" id="content-box" required></textarea><br>
             <button type="submit" id="form-submit">Submit</button>
         </form>`;
     root.innerHTML = formTemplate;

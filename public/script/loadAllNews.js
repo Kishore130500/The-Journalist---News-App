@@ -1,8 +1,4 @@
-const capitalize = (authorName) => {
-    let nameSplit = authorName.split(" ");
-    nameSplit.forEach((item, index) => nameSplit[index] = item.charAt(0).toUpperCase() + item.slice(1).toLowerCase());
-    return nameSplit.join(" ");
-}
+import { capitalize } from "./homePage.js";
 
 let data;
 

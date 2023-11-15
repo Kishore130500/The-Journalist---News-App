@@ -1,5 +1,12 @@
 import { loadPage } from "./routing.js";
 
+const capitalize = (authorName) => {
+    let nameSplit = authorName.split(" ");
+    nameSplit.forEach((item, index) => nameSplit[index] = item.charAt(0).toUpperCase() + item.slice(1).toLowerCase());
+    return nameSplit.join(" ");
+}
+
+
 const loadFormPage = document.getElementById("load-form-button")
 loadFormPage.addEventListener("click", (event) => {
     event.preventDefault();
@@ -16,4 +23,5 @@ newsClickEvent.addEventListener("click", (event) => {
         loadPage(event.target.id);
     }
 });
-//loadFullNews(event,newsClickEvent)
+
+export {capitalize};
