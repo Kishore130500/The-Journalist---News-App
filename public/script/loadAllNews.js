@@ -1,4 +1,4 @@
-import { capitalize } from "./homePage.js";
+import { capitalize } from "./helpers.js";
 
 let data;
 

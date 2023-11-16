@@ -1,19 +1,15 @@
 import { loadPage } from "./routing.js";
+import { newButton } from "./helpers.js";
 
-const capitalize = (authorName) => {
-    let nameSplit = authorName.split(" ");
-    nameSplit.forEach((item, index) => nameSplit[index] = item.charAt(0).toUpperCase() + item.slice(1).toLowerCase());
-    return nameSplit.join(" ");
+export const loadCreateButton = async () => {
+    newButton("load-form-button", "Create");
+    const loadFormPage = document.getElementById("load-form-button");
+    loadFormPage.addEventListener("click", (event) => {
+        event.preventDefault();
+        history.pushState(null, null, "/news/form");
+        loadPage();
+    })
 }
-
-
-const loadFormPage = document.getElementById("load-form-button")
-loadFormPage.addEventListener("click", (event) => {
-    event.preventDefault();
-    history.pushState(null, null, "/news/form");
-    loadPage();
-})
-
 
 const newsClickEvent = document.getElementById("news-board");
 newsClickEvent.addEventListener("click", (event) => {
@@ -23,5 +19,3 @@ newsClickEvent.addEventListener("click", (event) => {
         loadPage(event.target.id);
     }
 });
-
-export {capitalize};

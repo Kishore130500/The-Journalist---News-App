@@ -1,3 +1,5 @@
+document.querySelector("#form-submit").innerHTML = "Submit";
+
 let formData = {}
 
 window.addEventListener('load', () => {

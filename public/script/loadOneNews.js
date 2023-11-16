@@ -1,5 +1,5 @@
 import { accessData } from "./fetchAllData.js";
-import { capitalize } from "./homePage.js";
+import { capitalize } from "./helpers.js";
 
 
 const loadFullNews = (id) => {

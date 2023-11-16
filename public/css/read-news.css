@@ -2,9 +2,21 @@
     margin-bottom: 0.6em;
 }
 
-#load-form-button{
-    display: none;
+/*
+ALready declared on index.css
+
+#delete-button{
+    position: absolute;
+    right:40vw;
+    top:2em;
 }
+
+#update-button{
+    position: absolute;
+    right:20vw;
+    top:2em;
+}
+*/
 
 #news-page{
     width: 80%;
