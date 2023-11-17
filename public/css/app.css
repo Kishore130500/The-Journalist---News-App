@@ -11,7 +11,7 @@
 }
     .news-card a{
         text-decoration: none;
-        color: #2b2a2a;
+        color: #2b2a2a; 
     }
     .news-card h2:hover{
         text-decoration: underline;

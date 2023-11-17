@@ -4,6 +4,10 @@
 
 /*
 ALready declared on index.css
+#news-img{
+    width: 90%;
+    object-position: center;
+}
 
 #delete-button{
     position: absolute;
@@ -16,7 +20,6 @@ ALready declared on index.css
     right:20vw;
     top:2em;
 }
-*/
 
 #news-page{
     width: 80%;
@@ -47,6 +50,7 @@ ALready declared on index.css
 #subscript-container >em span{
 color: rgb(225, 95, 95);
 }
+*/
 
 #content {
     text-align: justify;

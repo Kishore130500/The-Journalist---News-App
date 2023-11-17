@@ -15,6 +15,7 @@ window.addEventListener('load', () => {
         title: "",
         date: "",
         author: "",
+        image: "",
         description: ""
     }
 });

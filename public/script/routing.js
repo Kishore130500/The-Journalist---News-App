@@ -6,7 +6,7 @@ import { loadModifyButtons } from "./readPage.js";
 //Selecting root div
 const root = document.getElementById("news-board");
 
-//HTML template for  form
+//HTML template for  form 
 const formTemplate = `
     <form>
         <div class="container">
@@ -17,9 +17,11 @@ const formTemplate = `
         </div>
         <label class="clearfix" for="heading">Heading</label> <br>
         <textarea name="title" class="input-fields" id="" required></textarea><br>
+        <label class="clearfix" for="image">Image URL (Optional)</label> <br>
+        <textarea name="image" class="input-fields"></textarea><br>
         <label for="content">Article</label><br> <br>
         <textarea name="description" class="input-fields" id="content-box" required></textarea><br>
-        <button type="submit" id="form-submit"> </button>
+        <button type="submit" id="form-submit"> Submit </button>
     </form>`;
 
 //For currently selected news' id
@@ -41,7 +43,7 @@ const loadFormPage = () => {
     newStyle("../css/form.css");
     newScript("../script/submitFormData.js");
     root.innerHTML = formTemplate;
-}; 
+};
 
 //Load the page for reading a news
 const loadReadPage = (id) => {

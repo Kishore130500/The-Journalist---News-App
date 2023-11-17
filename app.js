@@ -11,6 +11,7 @@ const newsSchema = new mongoose.Schema({
     title: String,
     date: String,
     author: String,
+    image: String,
     description: String
 })
 const News = mongoose.model('News', newsSchema);
@@ -64,4 +65,4 @@ app.patch('/api/v1/news/update/:id', (req,res) => {
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
     console.log(`\n 📢 App started on port ${port}`);
-});
+});  

@@ -2,7 +2,7 @@ import { accessData } from "./fetchAllData.js";
 import { capitalize } from "./helpers.js";
 
 let fullNews;
-let newsId; 
+let newsId;
 const loadFullNews = (id) => {
         accessData().then(data => {
             fullNews = data.find(data => data._id === id);
@@ -17,8 +17,8 @@ const loadFullNews = (id) => {
                            <em>  Updated: <span> ${fullNews.date} </span> </em>
                        </div>
                        <hr>
-                       <img id="news-img" src="" alt="">
-                       <article id="content"> ${fullNews.description} </article>
+                       ${fullNews.image? `<img id="news-img" src=${fullNews.image} alt=""></img>`:""}
+                       <article id="content"> ${(fullNews.description).replaceAll("\n","<br>")} </article>
                    </section>
                `;
                newsClickEvent.innerHTML = fullNewsCard;
