@@ -50,20 +50,20 @@ const loadReadPage = (id) => {
     loadModifyButtons();
     newStyle("../../../css/read-news.css");
     //newScript("../../../script/loadOneNews.js");
-    loadFullNews(id);
+    loadFullNews(id);  
 };
 
 const loadUpdatePage = () => {
     deleteScriptAndStyle();
-    newStyle("../../css/form.css");
-    newScript("../../script/updateNews.js");
+    newStyle("../../../../css/form.css");
+    newScript("../../../../script/updateNews.js");
     root.innerHTML = formTemplate;
 };
 
 const loadPage = (id = 0) => {
 
     const endPoint = document.location.pathname;
-    console.log(endPoint);//remove later
+    console.log(`Path is :${endPoint}`);//remove later
 
     switch (endPoint) {
         case "/":
@@ -78,7 +78,7 @@ const loadPage = (id = 0) => {
             loadReadPage(id);
             break;
         
-        case '/news/update/form':
+        case `/api/v1/news/update/${id}`:
             loadUpdatePage();
             break;
 

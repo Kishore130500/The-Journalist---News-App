@@ -17,7 +17,7 @@ export const newButton = (id, content) => {
     anchor.appendChild(button);
     document.getElementById("navbar").appendChild(anchor);
 
-}
+} 
 
 //Add a script
 export const newScript = (path) => {

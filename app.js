@@ -49,6 +49,18 @@ app.post('/api/v1/news', (req, res) => {
     .send(" ✅ Data Recieved on Server")
 });
 
+app.patch('/api/v1/news/update/:id', (req,res) => {
+        News.findByIdAndUpdate(req.params.id,req.body,{
+            new:true,
+            runValidators:true
+        })
+            .then(() => console.log(" ✅ Data updated"))
+            .catch(err => console.log(" 💥 Error adding data:", err));
+        res
+        .status(200)
+        .send(" ✅ Data updated");
+})
+
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
     console.log(`\n 📢 App started on port ${port}`);

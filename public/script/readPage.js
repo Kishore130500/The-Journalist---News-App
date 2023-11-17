@@ -1,5 +1,6 @@
 import { newButton } from "./helpers.js"
 import { loadPage } from "./routing.js";
+import { newsId}  from "./loadOneNews.js";
 
 export const loadModifyButtons = () => {
     newButton("delete-button","Delete");
@@ -13,7 +14,7 @@ export const loadModifyButtons = () => {
     const updateButton = document.getElementById("update-button");
     updateButton.addEventListener("click", (event) => {
         event.preventDefault();
-        history.pushState(null,null,'/news/update/form');
-        loadPage();
+        history.pushState(null,null,`update/${newsId}`);
+        loadPage(newsId);
     });
 }
