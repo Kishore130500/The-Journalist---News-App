@@ -1,3 +1,5 @@
+import { popUp } from "./popUp.js";
+
 document.querySelector("#form-submit").innerHTML = "Submit";
 
 let formData = {}
@@ -23,7 +25,7 @@ inputs.addEventListener('change', handleInputChange);
 //Submitting data
 const handleSubmit = (event) => {
     event.preventDefault();
-
+    window.scrollTo(0, 0);
 
     const options = {
         method: "POST",
@@ -36,12 +38,14 @@ const handleSubmit = (event) => {
     // "/" in beginning of the end point ensures that the request is made to the absolute path, from the root of the domain. 
     fetch('/api/v1/news', options)
         .then(response => {
-            alert("✅ Successfully posted article");
-            console.log(response.body);
             const inputFields = document.querySelectorAll(".input-fields");
             [...inputFields].forEach(element => element.value = "");
+            popUp("done","Posted")
+            console.log(response.body);
         })
-        .catch(err => console.log(" 💥 Error : \n",err));
+        .catch(err => {
+            popUp("close","posting");
+            console.log(" 💥 Error : \n",err)});
 };
 
 const submitData = document.querySelector('#form-submit');

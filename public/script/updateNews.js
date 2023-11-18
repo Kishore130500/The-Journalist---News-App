@@ -1,4 +1,5 @@
 import { fullNews } from "./loadOneNews.js";
+import { popUp } from "./popUp.js";
 
 document.querySelector("#form-submit").innerHTML = "Update";
 
@@ -31,6 +32,7 @@ inputs.addEventListener('change', handleInputChange);
 //Submitting data
 const handleSubmit = (event) => {
     event.preventDefault();
+    window.scrollTo(0, 0);
 
 
     const options = {
@@ -44,12 +46,15 @@ const handleSubmit = (event) => {
     // "/" in beginning of the end point ensures that the request is made to the absolute path, from the root of the domain. 
     fetch(`${location.pathname}`, options)
         .then(response => {
-            alert("✅ Successfully updated article");
-            console.log(response.body);
             const inputFields = document.querySelectorAll(".input-fields");
             [...inputFields].forEach(element => element.value = "");
+            popUp("done","Updated");
+            console.log(response.body);
+
         })
-        .catch(err => console.log(" 💥 Error : \n",err));
+        .catch(err => {
+            popUp("close","updation");
+            console.log(" 💥 Error : \n",err)});
 };
 
 const submitData = document.querySelector('#form-submit');

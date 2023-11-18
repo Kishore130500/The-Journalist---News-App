@@ -50,8 +50,8 @@ app.post('/api/v1/news', (req, res) => {
     .send(" ✅ Data Recieved on Server")
 });
 
-app.patch('/api/v1/news/update/:id', (req,res) => {
-        News.findByIdAndUpdate(req.params.id,req.body,{
+app.patch('/api/v1/news/update/:id', async(req,res) => {
+        await News.findByIdAndUpdate(req.params.id,req.body,{
             new:true,
             runValidators:true
         })

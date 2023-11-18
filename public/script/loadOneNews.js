@@ -17,11 +17,12 @@ const loadFullNews = (id) => {
                            <em>  Updated: <span> ${fullNews.date} </span> </em>
                        </div>
                        <hr>
-                       ${fullNews.image? `<img id="news-img" src=${fullNews.image} alt=""></img>`:""}
+                       ${fullNews.image ? `<img id="news-img" src=${fullNews.image} alt=""></img>`:""}
                        <article id="content"> ${(fullNews.description).replaceAll("\n","<br>")} </article>
                    </section>
                `;
                newsClickEvent.innerHTML = fullNewsCard;
+               window.scrollTo(0, 0);
         })
 }
 
