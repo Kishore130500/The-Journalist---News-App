@@ -7,7 +7,6 @@ const loadFullNews = (id) => {
         accessData().then(data => {
             fullNews = data.find(data => data._id === id);
             newsId = fullNews._id;
-            console.log(fullNews);
             const newsClickEvent = document.getElementById("news-board");
             const fullNewsCard = `
                    <section id="news-page">

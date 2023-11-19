@@ -2,12 +2,12 @@ import { capitalize } from "./helpers.js";
 
 let data;
 
-const fillNewsTemplate = function () {
+export const fillNewsTemplate = function () {
     fetch("/api/v1/news")
         .then(response => response.json())
         .then(convertedData => {
             data = convertedData["data"];
-            const newsBoard = document.getElementById("news-board")
+            const newsBoard = document.getElementById("news-board");
             data.forEach(news => {
                 const newsCard = document.createElement("div");
                 newsCard.className = "news-card";
@@ -24,4 +24,3 @@ const fillNewsTemplate = function () {
 
 
 
-fillNewsTemplate();

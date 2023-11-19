@@ -1,13 +1,7 @@
-import { fullNews } from "./loadOneNews.js";
 import { popUp } from "./popUp.js";
 
+export const tm = () => {
 document.querySelector("#form-submit").innerHTML = "Update";
-
-export const fillForm = (id) => {
-    const inputFields = document.querySelectorAll(".input-fields");
-    [...inputFields].forEach(element => 
-        element.value = fullNews[element.name]);
-}
 
 let formData = {}
 
@@ -57,11 +51,7 @@ const handleSubmit = (event) => {
             console.log(" 💥 Error : \n",err)});
 };
 
+
 const submitData = document.querySelector('#form-submit');
 submitData.addEventListener('click', handleSubmit);
-
-
-
-
-
-fillForm()
+}

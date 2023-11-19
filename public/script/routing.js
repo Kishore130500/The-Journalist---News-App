@@ -2,7 +2,8 @@ import { loadFullNews } from "./loadOneNews.js";
 import { newScript,newStyle,deleteScriptAndStyle } from "./helpers.js";
 import { loadCreateButton } from "./homePage.js";
 import { loadModifyButtons } from "./readPage.js";
-
+import { fillNewsTemplate } from "./loadAllNews.js";
+import { fillForm } from "./updatePage.js";
 //Selecting root div
 const root = document.getElementById("news-board");
 
@@ -34,6 +35,7 @@ const loadHomePage = () => {
     loadCreateButton();
     newStyle("../css/app.css");
     newScript("../script/loadAllNews.js");
+    fillNewsTemplate();
     newScript("../script/homePage.js")
 };
 
@@ -58,15 +60,16 @@ const loadReadPage = (id) => {
 const loadUpdatePage = () => {
     deleteScriptAndStyle();
     newStyle("../../../../css/form.css");
-    newScript("../../../../script/updateNews.js");
+    newScript("../../../../script/updatePage.js");
+    newScript("../../../../script/updateNews.js");    
     root.innerHTML = formTemplate;
+    fillForm();
 };
 
 const loadPage = (id = 0) => {
 
     const endPoint = document.location.pathname;
     console.log(`Path is :${endPoint}`);//remove later
-
     switch (endPoint) {
         case "/":
             loadHomePage();
@@ -88,7 +91,9 @@ const loadPage = (id = 0) => {
 }
 
 
-window.addEventListener("popstate", loadPage);
+window.addEventListener("popstate", () => {
+    root.innerHTML = "";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+    loadPage(currentId);});
 document.addEventListener("DOMContentLoaded", loadPage);
 
 export  {loadPage};
