@@ -4,6 +4,7 @@ import { loadCreateButton } from "./homePage.js";
 import { loadModifyButtons } from "./readPage.js";
 import { fillNewsTemplate } from "./loadAllNews.js";
 import { fillForm } from "./updatePage.js";
+
 //Selecting root div
 const root = document.getElementById("news-board");
 
@@ -27,7 +28,6 @@ const formTemplate = `
 
 //For currently selected news' id
 let currentId;
-
 
 //Load the Home Page
 const loadHomePage = () => {
@@ -53,7 +53,6 @@ const loadReadPage = (id) => {
     deleteScriptAndStyle();
     loadModifyButtons();
     newStyle("../../../css/read-news.css");
-    //newScript("../../../script/loadOneNews.js");
     loadFullNews(id);  
 };
 
@@ -67,7 +66,7 @@ const loadUpdatePage = () => {
 };
 
 const loadPage = (id = 0) => {
-
+    root.innerHTML = "";
     const endPoint = document.location.pathname;
     console.log(`Path is :${endPoint}`);//remove later
     switch (endPoint) {
@@ -90,10 +89,7 @@ const loadPage = (id = 0) => {
     }
 }
 
-
-window.addEventListener("popstate", () => {
-    root.innerHTML = "";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-    loadPage(currentId);});
+window.addEventListener("popstate", () => loadPage(currentId));
 document.addEventListener("DOMContentLoaded", loadPage);
 
 export  {loadPage};
